@@ -27,9 +27,9 @@ Other standard simulation parameters are: N_sim (number of simulations), N_trial
 'IMAGES' folder collects the most relevant images of performance analysis of AuGMEnT network and its variants on 12ax, saccade-antisaccade and sequence prediction tasks.
 'Visualization Codes' contains the codes for the plottings.
 
-####################################################################
+-------------------------------------------
 REFERENCE
-####################################################################
+-------------------------------------------
 
 Rombouts, Jaldert O., Sander M. Bohte, and Pieter R. Roelfsema (2015). “How
 Attention Can Create Synaptic Tags for the Learning of Working Memories
