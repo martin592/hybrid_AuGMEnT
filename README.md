@@ -2,14 +2,12 @@
 
 Extension of learning ability of AuGMEnT network (Rombouts, Roelfsema, et al. 2015) introducing leaky dynamics in an hybrid memory.
 
---------------------------------
-INSTRUCTIONS FOR THE SIMULATIONS
---------------------------------
+## Instructions for the simulations
 
 To run the augment simulations on task XXX type:
-
+```
 python3 AuGMEnT_XXX.py
-
+```
 where AuGMEnT_XXX.py is the main file.
 
 The code will automatically construct the dataset importing the building functions from TASKS/task_XXX.py.
@@ -27,12 +25,6 @@ Other standard simulation parameters are: N_sim (number of simulations), N_trial
 'IMAGES' folder collects the most relevant images of performance analysis of AuGMEnT network and its variants on 12ax, saccade-antisaccade and sequence prediction tasks.
 'Visualization Codes' contains the codes for the plottings.
 
--------------------------------------------
-REFERENCE
--------------------------------------------
+## Reference
 
-Rombouts, Jaldert O., Sander M. Bohte, and Pieter R. Roelfsema (2015). “How
-Attention Can Create Synaptic Tags for the Learning of Working Memories
-in Sequential Tasks”. In: PLOS Computational Biology 11.3, pp. 1–34.
-DOI: 10.1371/journal.pcbi.1004060. URL: https://doi.org/
-10.1371/journal.pcbi.1004060.
+* Rombouts, Jaldert O., Sander M. Bohte, and Pieter R. Roelfsema (2015). “How Attention Can Create Synaptic Tags for the Learning of Working Memories in Sequential Tasks”. In: PLOS Computational Biology 11.3, pp. 1–34. DOI: 10.1371/journal.pcbi.1004060. URL: https://doi.org/10.1371/journal.pcbi.1004060.
