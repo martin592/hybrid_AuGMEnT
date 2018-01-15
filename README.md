@@ -1,9 +1,10 @@
 # Hybrid AuGMEnT
 
-This code for the pre-print:  
+This is the code for the pre-print:  
 Multi-timescale memory dynamics in a reinforcement learning network with attention-gated memory  
 Marco Martinolli, Wulfram Gerstner, Aditya Gilra  
 [arXiv:1712.10062 \[q-bio.NC\]](https://arxiv.org/abs/1712.10062)  
+  
 We extend the learning capability of the AuGMEnT network (Rombouts, Bohte, Roelfsema, 2015) by introducing multi-timescale leaky dynamics in the working memory.
 
 ## Instructions for the simulations
