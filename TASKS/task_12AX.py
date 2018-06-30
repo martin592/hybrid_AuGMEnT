@@ -54,16 +54,46 @@ def data_construction(N_tr=500,p_target=0.5):
 		cont_loop += num_loops
 
 	return S_train, O_train
+	
+def data_construction_triplets(N_tr=500,p_target=0.5):	
+	
+	p_wrong = (1-p_target)/7
+	p_targ = p_target/2
+
+	S_DIG = np.random.choice(np.arange(2), (N_tr))
+	RANDOM_NUMBER_TRIPLETS = np.random.choice(np.arange(3),(N_tr)) +1
+	tot_number = np.sum(RANDOM_NUMBER_TRIPLETS)
+	RANDOM_PATTERNS = np.random.choice(np.arange(9),(tot_number), p=[p_targ,p_wrong,p_wrong, p_wrong,p_targ,p_wrong, p_wrong,p_wrong,p_wrong])
+
+	tot_length = 3*tot_number
+	S_train = np.zeros((tot_length,8))
+	O_train = np.zeros((tot_length,2))
+
+	# data division in training and test subsets
+	cont = 0
+	cont_trip = 0
+	for n in np.arange(N_tr):
+		num_triplets = RANDOM_NUMBER_TRIPLETS[n]
+		for trip in np.arange(num_triplets):
+		    S_train[cont:(cont+3),:], O_train[cont:(cont+3),:] = construct_trial(S_DIG[n],1,RANDOM_PATTERNS[cont_trip:(cont_trip+1)])
+		    cont += 3
+		    cont_trip += 1
+
+	return S_train, O_train	
 
 
 def main():
 
-	S, O = construct_trial(0,3,[0,4,7])
-	print(S)
-	print(O)
+	#S, O = construct_trial(0,3,[0,4,7])
+	#print(S)
+	#print(O)
 	
-	S, O = data_construction(3)
+	#S, O = data_construction(3)
+	#print(S)
+	#print(O)
+	
+	S, O = data_construction_triplets(2)
 	print(S)
-	print(O)
+	print(O)	
 
 #main()

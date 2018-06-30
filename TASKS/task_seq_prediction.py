@@ -5,9 +5,9 @@ def construct_trial(dist=2,p=0.5):
 	time_length = dist+1
 	num_letters = dist+2
 	
-	S_tr = np.zeros((time_length,num_letters))
-	for i in np.arange(time_length-1)+1:
-		S_tr[i,i]=1
+	S_tr = np.zeros((time_length, num_letters))
+	for i in np.arange(time_length-1) + 1:
+		S_tr[i,i] = 1
 	O_tr = np.zeros(2)
 
 	p_A = p
@@ -16,13 +16,41 @@ def construct_trial(dist=2,p=0.5):
 	x = np.random.choice(np.arange(2), size=(1), p=[p_A, p_X])
 
 	if x==0:
-		S_tr[0,0]=1
-		O_tr[0]=1
+		S_tr[0,0] = 1
+		O_tr[0] = 1
 	else:
-		S_tr[0,num_letters-1]=1
-		O_tr[1]=1
+		S_tr[0,num_letters-1] = 1
+		O_tr[1] = 1
 	
-	return S_tr,O_tr
+	return S_tr, O_tr
+
+def construct_test_trial(dist=2,p=0.5):
+
+	time_length = dist+2
+	num_letters = dist+2
+	
+	S_tr = np.zeros((time_length, num_letters))
+	O_tr = np.zeros(2)
+
+	p_A = p
+	p_X = 1-p
+
+	x = np.random.choice(np.arange(2), size=(1), p=[p_A, p_X])
+
+	if x==0:
+		S_tr[0,0] = 1
+		O_tr[0] = 1
+	else:
+		S_tr[0,num_letters-1] = 1
+		O_tr[1] = 1
+			
+	int_d = np.random.choice(np.arange(dist-1)+1, size=(dist))
+
+	for i in np.arange(time_length-2) + 1:
+		S_tr[i,int_d[i-1]] = 1
+	S_tr[time_length-1,dist] = 1
+	
+	return S_tr, O_tr
 
 
 def get_dictionary(dist):
@@ -34,7 +62,7 @@ def get_dictionary(dist):
 		dic_stim[l_id] = LETTERS[l_id]
 	dic_stim[dist+1]='X'
 	
-	dic_resp = {0:LETTERS[dist+1], 1:'Y'}
+	dic_resp = {0:'Z', 1:'Y'}
 	
 	return dic_stim, dic_resp
 	

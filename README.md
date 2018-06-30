@@ -25,10 +25,12 @@ N.B. The leak parameter can be either be a scalara or a list. In case it is a sc
 
 Other standard simulation parameters are: N_sim (number of simulations), N_trial (number of maximum trials), stop (boolean wheter to stop or not after convergence), verb (boolean to enable verbose output or not),...
 
+'further_analysis' contains additional analysis on performance of hybrid augment on 12AX-like tasks. See the inner readme.md for further details.
+
 'DATA' folder collects all the data of convergence times, error trends, converged matrices and pre-defined training dataset.
 
 'IMAGES' folder collects the most relevant images of performance analysis of AuGMEnT network and its variants on 12ax, saccade-antisaccade and sequence prediction tasks.
-'Visualization Codes' contains the codes for the plottings.
+'Visualization Codes' contains the codes for most of the plots.
 
 ## Reference
 

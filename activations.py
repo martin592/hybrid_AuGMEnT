@@ -22,6 +22,12 @@ def sigmoid(inp,W):
 	tot = np.clip(a=tot,a_min=-100,a_max=None) 
 	f = 1/(1+np.exp(-tot))
 	return f
+	
+def sigmoid_2(inp,W):
+	tot = np.sum(np.multiply(inp,W),axis=0,keepdims=True)
+	tot = np.clip(a=tot,a_min=-100,a_max=None) 
+	f = 1/(1+np.exp(-tot))
+	return f
 
 def hard_sigmoid(inp,W,strength=1):
 	tot1 = np.dot(inp,W)
